@@ -1,0 +1,27 @@
+push argument 0
+push constant 0
+lt
+if-goto NEGATIVE
+push argument 0
+goto END
+
+NEGATIVE:
+push argument 0
+neg
+
+END:
+pop argument 1
+push argument 0
+push constant 0
+lt
+if-goto SET_NEGATIVE
+push constant 0
+goto SET_FLAG
+
+SET_NEGATIVE:
+push constant 1
+
+SET_FLAG:
+pop argument 2
+push constant 0
+pop argument 3
