@@ -10,7 +10,6 @@ goto NONNEGATIVE
 label NEGATIVE
 push argument 0
 neg
-dup
 push argument 0
 eq
 if-goto ERROR_FLAG
@@ -25,9 +24,9 @@ push constant 0
 pop argument 3
 goto END
 label ERROR_FLAG
-pop temp 0
 push constant 0
 pop argument 1
 push constant 1
 pop argument 3
+goto END
 label END
