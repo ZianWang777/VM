@@ -1,32 +1,20 @@
+push constant 0
+pop argument 2
+push constant 0
+pop argument 3
 push argument 0
 push constant 0
 lt
+if-goto IS_NEGATIVE
+push argument 0
+pop argument 1
+goto END
+label IS_NEGATIVE
+push constant 1
 pop argument 2
 push argument 0
-push constant 0
-lt
-if-goto NEGATIVE
-goto NONNEGATIVE
-label NEGATIVE
-push argument 0
 neg
-push argument 0
-eq
-if-goto ERROR_FLAG
 pop argument 1
-push constant 0
-pop argument 3
-goto END
-label NONNEGATIVE
-push argument 0
-pop argument 1
-push constant 0
-pop argument 3
-goto END
-label ERROR_FLAG
-push constant 0
-pop argument 1
-push constant 1
-pop argument 3
 goto END
 label END
+goto END
